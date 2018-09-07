@@ -1,0 +1,29 @@
+server:
+  port: 8090
+spring:
+  flyway:
+    enabled: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+  mandatory-file-encoding: UTF-8
+  jpa:
+    show-sql: true
+
+spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults: false
+spring.jpa.properties.hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+
+security:
+  oauth2:
+    client:
+      clientId: 96126065550-h1689pou99esv8244hfh5754mqk0f7nh.apps.googleusercontent.com
+      clientSecret: snj5XBzagBctjbpYaMs76vAu
+      accessTokenUri: https://www.googleapis.com/oauth2/v4/token
+      userAuthorizationUri: https://accounts.google.com/o/oauth2/v2/auth
+      authenticationScheme: query
+      clientAuthenticationScheme: form
+      scope: openid,email,profile
+    resource:
+      userInfoUri: https://www.googleapis.com/oauth2/v3/userinfo
+      preferTokenInfo: true
